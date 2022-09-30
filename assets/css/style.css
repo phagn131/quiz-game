@@ -1,58 +1,32 @@
 /* setup css*/
-* {
+*, *::before, *::after {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
   }
   
   body {
-    background: #fff;
-    color: #00171f;
-    font-family: Helvetica, Arial, sans-serif;
-    line-height: 1.5;
+    font-size: 14px;
+    font-family: 'Times New Roman', Times, serif;
   }
   
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    color: #00a8e8;
+  body {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    background-color: slategray;
   }
   
-  article {
-    margin: 20px auto;
-    padding: 20px;
-    border: 3px solid #00a8e8;
-    overflow: auto;
-  }
-  
-  #header {
-    margin: 0 auto 50px auto;
-    width: 100%;
-    padding: 30px;
-    color: #ffffff;
-    background: #003459;
-    border-bottom: 3px solid #00a8e8;
+  .box, .inner-box {
+    display: block;
+    width: 60vw;
+    margin: 70px auto;
     text-align: center;
+    font-size: 30px;
+    box-shadow: 0 8px 14px 0 rgba(0,0,0,1);
+    transition: 0.3s;
+    background-color: rgba(180, 202, 129, 0.728);
+    padding-top: 20px;
+    border-radius: 2%;
   }
   
-  #articles {
-    max-width: 80%;
-    margin: 0 auto;
-  }
-  
-  .art-title {
-    text-decoration: underline #003459;
-    margin-bottom: 15px;
-  }
-  
-  .fashion {
-    height: 200px;
-    width: 400px;
-    float: left;
-    margin-right: 20px;
-    border: 2px white;
-  }
+
   
