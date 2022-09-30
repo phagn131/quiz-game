@@ -1,18 +1,18 @@
 /* setup css*/
 *, *::before, *::after {
     box-sizing: border-box;
+    
   }
-  
-  body {
-    font-size: 14px;
-    font-family: "Roboto", sans-serif;
-  }
-  
+
   body {
     margin: 0;
     padding: 0;
     font-weight: normal;
     background-color: slategray;
+    font-size: 14px;
+    font-family: "Roboto", sans-serif;
+    background-image: linear-gradient(to bottom right, black, slategray);
+    
   }
   
   .box, .inner-box {
