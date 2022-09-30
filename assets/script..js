@@ -1,11 +1,22 @@
-//setup JS and test with class script
+//  1: create element using tags
+//  2: Modify attributes
+//  3: Append the element to something on the page
 
+// set var variables
 
+//Set function declaration
+//if (x === y) {
+//} else (x == y){
+//} 
 
-// Access element using id
-var articlesDiv = document.getElementById('articles');
-var headerDiv = document.getElementById('header');
+// log values
+// get the number of pieces from the user and replace the pieceCount
+//var pieceCount = parseInt(prompt("How many pieces?"));
+//var colors = ["blue", "purple", "red", "yellow", "pink", "brown"];
 
-// Change style by accessing style object's properties
-articlesDiv.children[0].style.fontSize = '50px';
-headerDiv.children[0].style.color = 'white';
+//console.log(pieceCount);
+//for(var i = 0; i < pieceCount; i++){
+//  var wrapper = document.createElement("div");
+//  var h1Dup = document.createElement("h1");
+//  h1Dup.textContent = text;
+//start.addEventListener("click",startQuiz);
