@@ -4,48 +4,34 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<!--font family added from Google to access in css-->
-<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!--font family added from Google to access in css-->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" type="text/css" href="./assets/css/reset.css"/>
   <link rel="stylesheet" href="./assets/css/style.css">
   <title>Coding Quiz</title>
 </head>
     
 <body>
 
-    <div class="box">
-        <div class="quiz-header">
-            <button id="btn0">View Highscores</button>
-            <p id="timer">Timer: 00:00</p>
+    
+    <div class="container">
+      <button class="btn">View Highscores</button>
+      <p id="timer">Timer: 00:00</p>  
+        <div id="question-container" class="hide">
+          <div id="question">Quiz Questions</div>
+            <div id="answer-buttons" class="btn-grid">
+              <button class="btn">Answer 1</button>
+              <button class="btn">Answer 2</button>
+              <button class="btn">Answer 3</button>
+              <button class="btn">Answer 4</button>
+            </div>
+          </div>  
+        <div class="controls">
+          <button id="start-btn" class="start-btn btn">Start</button>
+          <button id="next-btn" class="next-btn btn hide">Next</button>
+        </div>  
     </div>
-        <div class="inner-box">
-          <header class="Intro">
-            <h5>To start quiz, press here &#x2193</h5>
-            <button id="start-timer">Start!</button>
-            
-            
-            <div class="buttons">
-              <button class="btn" id="btn0">1. <span id="selection-0"></span>
-              </button>  
-             
-              <button class="btn" id="btn1">2. <span id="selection-1"></span>
-              </button> 
-              
-              <button class="btn" id="btn2">3. <span id="selection-2"></span>
-              </button>
-
-              <button class="btn" id="btn3">4. <span id="selection-2"></span>
-              </button>
-          </div>
-
-
-    </div>
-  <footer><h4>
-  SAMPLE TEXT
-  </h4></footer>
-
-  <script src="./assets/js/script.js"></script>
+ <script src="./assets/js/script.js"></script>
 </body>
 </html>

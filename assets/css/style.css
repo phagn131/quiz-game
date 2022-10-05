@@ -1,38 +1,102 @@
-/* setup css*/
+
 *, *::before, *::after {
-    box-sizing: border-box;
-    
-  }
-
-  body {
-    margin: 0;
-    padding: 0;
-    font-weight: normal;
-    background-color: slategray;
-    font-size: 14px;
-    font-family: "Roboto", sans-serif;
-    background-image: linear-gradient(to bottom right, black, slategray);
-    
-  }
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
   
-  .box, .inner-box {
-    display: block;
-    width: 60vw;
-    margin: 70px auto;
-    text-align: center;
-    font-size: 30px;
-    box-shadow: 0 8px 14px 0 rgba(0,0,0,1);
-    transition: 0.3s;
-    background-color: rgba(180, 202, 129, 0.728);
-    padding-top: 20px;
-    border-radius: 2%;
-  }
+}
 
-  .box #btn0{
-    font-size: 2rem;
-    border-radius: 5px;
+:root{
+  --hue-neutral: 200;
+  --hue-wrong: 0;
+  --hue-correct: 145;
+}
+body {
+  --hue: var(--hue-neutral);
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(var(--hue), 100%, 20%);
+}
 
-  }
-  
+body.correct{
+  --hue: var(--hue-correct);
+}
 
-  
+body.wrong{
+  --hue: var(--hue-wrong);
+}
+
+.container
+ {
+  width: 80%;
+  max-width: 800px;
+  padding: 10px;
+  box-shadow: 0 0 10px 2px;
+  transition: 0.3s;
+  background-color: rgba(180, 202, 129, 0.728);
+  border-radius: 5px;
+}
+
+.btn-grid{
+  display: grid;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+#timer{
+  display: flex;
+  justify-content: flex-end;
+  font-size: 1.5rem;
+
+}
+
+#question{
+  display: flex;
+  justify-content: flex-start;
+  font-size: 1.5rem;
+
+}
+
+.btn{
+  --hue: var(--hue-neutral);
+  border: 2px solid hsl(var(--hue), 100%, 30%);
+  border-radius: 5px;
+  padding: 5px 10px;
+  outline: none;
+}
+
+.btn:hover{
+  border-color: black;
+
+}
+
+.btn.correct{
+  --hue: var(--hue-correct);
+  color: black;
+}
+
+.btn-wrong{
+  --hue: var(--hue-wrong);
+
+}
+.start-btn, .next-btn{
+  font-weight: bold;
+  padding: 10px 20px;
+
+}
+
+.controls{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.hide{
+  display: none;
+}
