@@ -40,3 +40,4 @@ function setTime() {
 //  var h1Dup = document.createElement("h1");
 //  h1Dup.textContent = text;
 document.getElementById("start-timer").addEventListener("click",setTime);
+document.getElementById("btn0").addEventListener("click",Event);
