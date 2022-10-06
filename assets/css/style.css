@@ -24,7 +24,13 @@ body {
   align-items: center;
   font-weight: bold;
   font-size: 1.5rem;
+}
 
+#btn-1{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 1.30rem;
 }
 
 .container
@@ -94,4 +100,32 @@ body {
 
 .hide{
   display: none;
+}
+/*set parameters for responive pages on different devices*/
+@media screen and (max-width: 1200px) {
+  header {
+    background: slategray;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  section,
+  header {
+    background-image: linear-gradient(180degblack, slategray);
+  }
+  nav {
+    background-color: black;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  nav {
+    background-color: slategray;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  footer {
+    background-color: black;
+  }
 }

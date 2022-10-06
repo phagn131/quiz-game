@@ -2,18 +2,14 @@
 //  2: Modify attributes
 //  3: Append the element to something on the page
 
-var timeEl = document.querySelector("#timer");
-var secondsLeft = 120;
-var start = document.getElementById("start-timer");
-
+var timeEl = document.querySelector("timer")
+var secondsLeft = 120
+var highScoresButton = document.getElementById("highscores-btn")
 var nextButton = document.getElementById("next-btn");
-
 var startButton = document.getElementById("start-btn");
 var questionContainerElement = document.getElementById("question-container");
-
 var questionElement = document.getElementById("question");
 var answerButtonsElement = document.getElementById("answer-buttons");
-
 var shuffledQuestions, currentQuestionIndex;
 
 startButton.addEventListener("click", startGame, setTime);
