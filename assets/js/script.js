@@ -17,22 +17,19 @@ nextButton.addEventListener("click", () => {
   currentQuestionIndex++;
   setNextQuestion();
 });
+
 function setTime() {
-  
   var timerInterval = setInterval(function () {
     secondsLeft--;
-    timeEl.textContent = secondsLeft + " seconds left till quiz end.";
-
-    if (secondsLeft === 0) {
-
-      clearInterval(timerInterval);
-  
-      menubar.HTML = "";
+    timeEl.textContent = `${secondsLeft} seconds left till quiz end.`;
+  if (secondsLeft === 0) {
+    clearInterval(timerInterval);
+    menubar.HTML = "";
     }
   }, 1000);
 }
+
 function startGame() {
-  console.log("started");
 
   startButton.classList.add("hide");
   shuffledQuestions = questions.sort(() => Math.random() - 0.5);
@@ -53,7 +50,7 @@ function showQuestion(question) {
     button.classList.add("btn");
     if (answer.correct) {
       button.dataset.correct = answer.correct;
-      localStorage.setItem("correct", JSON.stringify(answer));
+      
     }
     button.addEventListener("click", selectAnswer);
     answerButtonsElement.appendChild(button);
@@ -86,10 +83,17 @@ function setStatusClass(element, correct) {
   clearStatusClass(element);
   if (correct) {
     element.classList.add("correct");
+    window.alert("correct!")
+    localStorage.setItem("correct", JSON.stringify(answer));
+
   } else {
     element.classList.add("wrong");
+    window.alert("that is...incorrect!")
+    localStorage.setItem("wrong", JSON.stringify(answer));
+  
+    }
   }
-}
+
 
 function clearStatusClass(element) {
   element.classList.remove("correct");
