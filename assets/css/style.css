@@ -5,13 +5,8 @@
   
 }
 
-:root{
-  --hue-neutral: 200;
-  --hue-wrong: 0;
-  --hue-correct: 145;
-}
+
 body {
-  --hue: var(--hue-neutral);
   width: 100vw;
   height: 100vh;
   margin: 0;
@@ -20,15 +15,16 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: hsl(var(--hue), 100%, 20%);
+  background-color: slategrey;
 }
 
-body.correct{
-  --hue: var(--hue-correct);
-}
+.container #welcome-message{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.5rem;
 
-body.wrong{
-  --hue: var(--hue-wrong);
 }
 
 .container
@@ -38,7 +34,7 @@ body.wrong{
   padding: 10px;
   box-shadow: 0 0 10px 2px;
   transition: 0.3s;
-  background-color: rgba(180, 202, 129, 0.728);
+  background-color: lightgray;
   border-radius: 5px;
 }
 
@@ -51,6 +47,7 @@ body.wrong{
 #timer{
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   font-size: 1.5rem;
 
 }
@@ -63,8 +60,7 @@ body.wrong{
 }
 
 .btn{
-  --hue: var(--hue-neutral);
-  border: 2px solid hsl(var(--hue), 100%, 30%);
+  border: 2px solid green;
   border-radius: 5px;
   padding: 5px 10px;
   outline: none;
@@ -76,12 +72,11 @@ body.wrong{
 }
 
 .btn.correct{
-  --hue: var(--hue-correct);
   color: black;
 }
 
 .btn-wrong{
-  --hue: var(--hue-wrong);
+  color: black;
 
 }
 .start-btn, .next-btn{
