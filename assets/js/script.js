@@ -2,9 +2,48 @@
 //  2: Modify attributes
 //  3: Append the element to something on the page
 
-var timeEl = document.querySelector("timer")
-var secondsLeft = 120
-var highScoresButton = document.getElementById("highscores-btn")
+
+// Selects element by class
+var timeEl = document.querySelector(".time");
+
+// Selects element by id
+var mainEl = document.getElementById("body");
+
+var secondsLeft = 20;
+
+function setTime() {
+  // Sets interval in variable
+  var timerInterval = setInterval(function() {
+    secondsLeft--;
+    timeEl.textContent = secondsLeft + " seconds left in quiz.";
+
+    if(secondsLeft === 0) {
+      // Stops execution of action at set interval
+      clearInterval(timerInterval);
+      // Calls function to create and append image
+      sendMessage();
+    }
+
+  }, 1000);
+}
+
+// Function to create and append colorsplosion image
+function sendMessage() {
+  timeEl.textContent = " ";
+  window.alert("GAME OVER");
+
+}
+
+setTime();
+
+
+
+
+
+
+
+
+var highScoresButton = document.getElementById("highscores-btn");
 var nextButton = document.getElementById("next-btn");
 var startButton = document.getElementById("start-btn");
 var questionContainerElement = document.getElementById("question-container");
@@ -12,25 +51,13 @@ var questionElement = document.getElementById("question");
 var answerButtonsElement = document.getElementById("answer-buttons");
 var shuffledQuestions, currentQuestionIndex;
 
-startButton.addEventListener("click", startGame, setTime);
+startButton.addEventListener("click", startGame);
 nextButton.addEventListener("click", () => {
   currentQuestionIndex++;
   setNextQuestion();
 });
 
-function setTime() {
-  var timerInterval = setInterval(function () {
-    secondsLeft--;
-    timeEl.textContent = `${secondsLeft} seconds left till quiz end.`;
-  if (secondsLeft === 0) {
-    clearInterval(timerInterval);
-    menubar.HTML = "";
-    }
-  }, 1000);
-}
-
 function startGame() {
-
   startButton.classList.add("hide");
   shuffledQuestions = questions.sort(() => Math.random() - 0.5);
   currentQuestionIndex = 0;
@@ -50,7 +77,6 @@ function showQuestion(question) {
     button.classList.add("btn");
     if (answer.correct) {
       button.dataset.correct = answer.correct;
-      
     }
     button.addEventListener("click", selectAnswer);
     answerButtonsElement.appendChild(button);
@@ -82,18 +108,10 @@ function selectAnswer(e) {
 function setStatusClass(element, correct) {
   clearStatusClass(element);
   if (correct) {
-    element.classList.add("correct");
-    window.alert("correct!")
-    localStorage.setItem("correct", JSON.stringify(answer));
-
   } else {
     element.classList.add("wrong");
-    window.alert("that is...incorrect!")
-    localStorage.setItem("wrong", JSON.stringify(answer));
-  
-    }
   }
-
+}
 
 function clearStatusClass(element) {
   element.classList.remove("correct");
