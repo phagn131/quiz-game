@@ -2,6 +2,42 @@
 //  2: Modify attributes
 //  3: Append the element to something on the page
 
+/*const contestant = document.getElementById("contestant");
+const saveScoreBtn = document.getElementById("saveScoreBtn");
+const finalScore = document.getElementById("finalScore");
+const mostRecentScore = localStorage.getItem("mostRecetScore");
+
+const HighScores = JSON.parse(localStorage.getItem("highScores")) || [];
+console.log("highScores");
+
+const MAX_HIGH_SCORES = 5;
+finalScore.innerText = mostRecentScore;
+
+contestant.addEventListener("keyup", () => {
+  saveScoreBtn.disabled = !contestant.value;
+});
+
+saveHighScore = e => {
+  console.log("clicked the save button!");
+  e.prevenDefault();
+
+  const score = {
+    score: Math.floor(Math.random() * 100),
+    name: contestant.value
+  };
+
+  HighScores.push(score);
+  
+
+  HighScores.sort( (a,b) => b.score - a.score) 
+
+  HighScores.splice(5);
+  localStorage.setItem("highScores", JSON.stringify(HighScores));
+  window.location.assign("/");
+
+  console.log(HighScores);
+
+  }*/
 
 // Selects element by class
 var timeEl = document.querySelector(".time");
@@ -13,17 +49,16 @@ var secondsLeft = 20;
 
 function setTime() {
   // Sets interval in variable
-  var timerInterval = setInterval(function() {
+  var timerInterval = setInterval(function () {
     secondsLeft--;
     timeEl.textContent = secondsLeft + " seconds left in quiz.";
 
-    if(secondsLeft === 0) {
+    if (secondsLeft === 0) {
       // Stops execution of action at set interval
       clearInterval(timerInterval);
       // Calls function to create and append image
       sendMessage();
     }
-
   }, 1000);
 }
 
@@ -31,17 +66,9 @@ function setTime() {
 function sendMessage() {
   timeEl.textContent = " ";
   window.alert("GAME OVER");
-
 }
 
 setTime();
-
-
-
-
-
-
-
 
 var highScoresButton = document.getElementById("highscores-btn");
 var nextButton = document.getElementById("next-btn");
