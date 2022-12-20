@@ -2,7 +2,7 @@
 //  2: Modify attributes
 //  3: Append the element to something on the page
 
-/*const contestant = document.getElementById("contestant");
+const contestant = document.getElementById("contestant");
 const saveScoreBtn = document.getElementById("saveScoreBtn");
 const finalScore = document.getElementById("finalScore");
 const mostRecentScore = localStorage.getItem("mostRecetScore");
@@ -37,7 +37,7 @@ saveHighScore = e => {
 
   console.log(HighScores);
 
-  }*/
+  }
 
 // Selects element by class
 var timeEl = document.querySelector(".time");
@@ -62,14 +62,6 @@ function setTime() {
   }, 1000);
 }
 
-// Function to create and append colorsplosion image
-function sendMessage() {
-  timeEl.textContent = " ";
-  window.alert("GAME OVER");
-}
-
-setTime();
-
 var highScoresButton = document.getElementById("highscores-btn");
 var nextButton = document.getElementById("next-btn");
 var startButton = document.getElementById("start-btn");
@@ -78,7 +70,7 @@ var questionElement = document.getElementById("question");
 var answerButtonsElement = document.getElementById("answer-buttons");
 var shuffledQuestions, currentQuestionIndex;
 
-startButton.addEventListener("click", startGame);
+//startButton.addEventListener("click", startGame);
 nextButton.addEventListener("click", () => {
   currentQuestionIndex++;
   setNextQuestion();
@@ -131,20 +123,8 @@ function selectAnswer(e) {
     startButton.innerText = "Restart";
     startButton.classList.remove("hide");
   }
-}
-function setStatusClass(element, correct) {
-  clearStatusClass(element);
-  if (correct) {
-  } else {
-    element.classList.add("wrong");
-  }
-}
 
-function clearStatusClass(element) {
-  element.classList.remove("correct");
-  element.classList.remove("wrong");
-}
-
+  
 var questions = [
   {
     question: "Who invented the C programming language?",
@@ -185,6 +165,31 @@ var questions = [
   },
 ];
 
+function setStatusClass(element, correct) {
+  clearStatusClass(element);
+  if (correct) {
+  } else {
+    element.classList.add("wrong");
+  }
+}
+
+function clearStatusClass(element) {
+  element.classList.remove("correct");
+  element.classList.remove("wrong");
+}
+
+
+// Function to create and append colorsplosion image
+function sendMessage() {
+  timeEl.textContent = " ";
+  window.alert("GAME OVER");
+}
+
+setTime();
+
+}
+
+
 /*var timeEl = document.querySelector("#timer");
 var secondsLeft = 120;
 var start = document.getElementById("start-timer");
@@ -205,3 +210,24 @@ function setTime() {
 
   }, 1000);
 }*/
+console.log("Paul, your question?")
+
+function setTime() {
+  // Sets interval in variable
+  var timerInterval = setInterval(function() {
+    secondsLeft--;
+    timeEl.textContent = secondsLeft + " seconds left till quiz end.";
+
+    if(secondsLeft === 0) {
+      // Stops execution of action at set interval
+      clearInterval(timerInterval);
+      // Calls function to create and append image
+      menubar.HTML="";
+    }
+
+  }, 1000);
+}
+function addQuestion() {
+
+
+}

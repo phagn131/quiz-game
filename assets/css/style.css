@@ -104,7 +104,7 @@ body {
 /*set parameters for responive pages on different devices*/
 @media screen and (max-width: 1200px) {
   header {
-    background: slategray;
+    background: rgb(113, 148, 182);
   }
 }
 
